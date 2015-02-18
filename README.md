@@ -1,4 +1,3 @@
-documentation
-=============
+# Storj Wiki
 
-General documentation and plans for the Storj project.
+You can find the wiki home page [here](https://github.com/Storj/wiki/wiki).
