@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>contract sample</title>
+
+<link rel="stylesheet" type="text/css" href="http://honttoni.web.fc2.com/blog_honttoni/samples/sample60set/css/form2.css">
+<style type="text/css">
+input.price { width: 5em; }
+input.service { width: 20em; }
+</style>
+
+
+<!--[if lt IE 9]>
+<![endif]-->
+</head>
+<body>
+
+
+<h1>contract sample</h2>
+
+<form id="form2">
+<p>
+<span>service name:</span>
+<label><input type="text" class="service" name="version" value="farming" readonly></label>
+</p>
+
+<p>
+<span>contract version(0~255):</span>
+<label><input type="number" class="price" name="version" min="0" max="255" step="1" value="0" readonly></label>
+</p>
+
+<p>
+<span>shard size:</span>
+<span class="check">
+<label><input type="radio" name="q0" value="10">10MB</label>
+<label><input type="radio" name="q0" value="10" checked>30MB</label>
+<label><input type="radio" name="q0" value="10">50MB</label>
+<label><input type="radio" name="q0" value="10">100MB</label>
+</span>
+</p>
+
+<p>
+<span>reward for first heartbeat(0~65535):</span>
+<input type="number" class="price" name="first_heartbeat" min="0" max="255" step="1" value="10"> μBTC
+</p>
+
+<p>
+<span>reward for intermediate heartbeats(0~65535):</span>
+<input type="number" class="price" name="first_heartbeat" min="0" max="255" step="1" value="10"> μBTC
+</p>
+
+<p>
+<span>reward  per shard retrieval(0~65535):</span>
+<input type="number" class="price" name="retrieval" min="0" max="255" step="1" value="10"> μBTC
+</p>
+
+
+<p>
+<span>The number of heartbeats.(0~100):</span>
+<input type="number" class="price" name="n_heartbeat" min="0" max="255" step="1" value="10"> %
+</p>
+
+<p>
+<span>The amount of data checked per heartbeat(0~255):</span>
+<input type="number" class="price" name="n_heartbeat" min="0" max="255" step="1" value="24"> count(s)/day
+</p>
+
+<p>
+<span>The algorithm used to verify the file type:</span>
+<span class="check">
+<label><input type="radio" name="q20" value="swizzle">swizzle</label>
+<label><input type="radio" name="q20" value="merkle" checked>merkle</label>
+<label><input type="radio" name="q20" value="HAIL">RSA-HAIL</label>
+</span>
+</p>
+
+
+<p>
+<span>Contract term/length.(0~255):</span>
+<input type="number" class="price" name="n_heartbeat" min="0" max="255" step="1" value="12"> hour(s)
+</p>
+
+<p>
+<span>Shard encryption enforcement:</span>
+<span class="check">
+<label><input type="radio" name="q1" value="yes" >Yes</label>
+<label><input type="radio" name="q1" value="No" checked>No</label>
+</span>
+</p>
+
+
+<p>
+<label>
+<span>Variability type:</span>
+<span class="check">
+<label><input type="radio" name="q3" value="yes">Yes</label>
+<label><input type="radio" name="q3" value="No" checked>No</label>
+</span>
+</p>
+
+
+</form>
+
+</body>
+</html>
