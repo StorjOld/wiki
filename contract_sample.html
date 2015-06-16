@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <title>contract sample</title>
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
 <style type="text/css">
 input.price { width: 5em; }
 input.service { width: 20em; }
@@ -18,85 +21,101 @@ input.service { width: 20em; }
 
 <h1>contract sample</h2>
 
-<form id="form2">
-<p>
-<span>service name:</span>
-<label><input type="text" class="service" name="version" value="farming" readonly></label>
-</p>
+<form class="form-horizontal">
 
-<p>
-<span>contract version(0~255):</span>
-<label><input type="number" class="price" name="version" min="0" max="255" step="1" value="0" readonly></label>
-</p>
+<div class="form-group">
+<label for="version" class="control-label col-sm-3">service name:</label>
+<div class="col-sm-3">
+<input type="text" id="version" class="service" name="version" value="farming" readonly>
+</div>
+</div>
 
-<p>
-<span>shard size:</span>
-<span class="check">
-<label><input type="radio" name="q0" value="10">10MB</label>
-<label><input type="radio" name="q0" value="10" checked>30MB</label>
-<label><input type="radio" name="q0" value="10">50MB</label>
-<label><input type="radio" name="q0" value="10">100MB</label>
-</span>
-</p>
+<div class="form-group">
+<label for="service" class="control-label col-sm-3">contract version(0~255):</label>
+<div class="col-sm-3">
+<input type="number" id="service" class="price" name="service" min="0" max="255" step="1" value="0" readonly>
+</div>
+</div>
 
-<p>
-<span>reward for first heartbeat(0~65535):</span>
-<input type="number" class="price" name="first_heartbeat" min="0" max="255" step="1" value="10"> μBTC
-</p>
+<div class="form-group">
+<label class="control-label col-sm-3">The size of the shard to be stored :</label>
+<div class="col-sm-3">
+<label class="checkbox-inline"><input type="radio" name="q0" value="10">10MB</label>
+<label class="checkbox-inline"><input type="radio" name="q0" value="10" checked>30MB</label>
+<label class="checkbox-inline"><input type="radio" name="q0" value="10">50MB</label>
+<label class="checkbox-inline"><input type="radio" name="q0" value="10">100MB</label>
+</div>
+</div>
 
-<p>
-<span>reward for intermediate heartbeats(0~65535):</span>
-<input type="number" class="price" name="first_heartbeat" min="0" max="255" step="1" value="5"> μBTC
-</p>
+<div class="form-group">
+<label for="first_heartbeat" class="control-label col-sm-3">reward for first heartbeat (0~65535):</label>
+<div class="col-sm-3">
+<input type="number" id="first_heartbeat" class="price" name="first_heartbeat" min="0" max="65535" step="1" value="10"> μBTC
+</div>
+</div>
 
-<p>
-<span>reward  per shard retrieval(0~65535):</span>
-<input type="number" class="price" name="retrieval" min="0" max="255" step="1" value="20"> μBTC
-</p>
+<div class="form-group">
+<label for="heartbeat" class="control-label col-sm-3">reward for intermediate heartbeats (0~65535):</label>
+<div class="col-sm-3">
+<input type="number" class="price" id="heartbeat" name="heartbeat" min="0" max="255" step="1" value="10"> μBTC
+</div>
+</div>
 
-
-<p>
-<span>The number of heartbeats.(0~100):</span>
-<input type="number" class="price" name="n_heartbeat" min="0" max="255" step="1" value="10"> %
-</p>
-
-<p>
-<span>The amount of data checked per heartbeat(0~255):</span>
-<input type="number" class="price" name="n_heartbeat" min="0" max="255" step="1" value="24"> count(s)/day
-</p>
-
-<p>
-<span>The algorithm used to verify the file type:</span>
-<span class="check">
-<label><input type="radio" name="q20" value="swizzle">Swizzle</label>
-<label><input type="radio" name="q20" value="merkle" checked>Merkle</label>
-<label><input type="radio" name="q20" value="HAIL">RSA-HAIL</label>
-</span>
-</p>
+<div class="form-group">
+<label for="retrieval" class="control-label col-sm-3">reward  per shard retrieval(0~65535):</label>
+<div class="col-sm-2">
+<input type="number" id="retrieval" class="price" name="retrieval" min="0" max="65535" step="1" value="10"> μBTC
+</div>
+</div>
 
 
-<p>
-<span>Contract term/length.(0~255):</span>
-<input type="number" class="price" name="n_heartbeat" min="0" max="255" step="1" value="12"> hour(s)
-</p>
+<div class="form-group">
+<label for="n_heartbeat" class="control-label col-sm-3 text-left">The number of heartbeats.(0~100):</label>
+<div class="col-sm-2">
+<input type="number" class="price" id="n_heartbeat" name="n_heartbeat" min="0" max="100" step="1" value="10"> %
+</div>
+</div>
 
-<p>
-<span>Shard encryption enforcement:</span>
-<span class="check">
-<label><input type="radio" name="q1" value="yes" >Yes</label>
-<label><input type="radio" name="q1" value="No" checked>No</label>
-</span>
-</p>
+<div class="form-group">
+<label for="a_heartbeat" class="control-label col-sm-3">The amount of data checked per heartbeat(0~255):</label>
+<div class="col-sm-2">
+<input type="number" class="price" id="a_heartbeat" name="a_heartbeat" min="0" max="255" step="1" value="24"> count(s)/day
+</div>
+</div>
+
+<div class="form-group">
+<label class="control-label col-sm-3">The algorithm used to verify the file type:</label>
+<div class="col-sm-2">
+<label class="checkbox-inline"><input type="radio" name="q20" value="swizzle">swizzle</label>
+<label class="checkbox-inline"><input type="radio" name="q20" value="merkle" checked>merkle</label>
+<label class="checkbox-inline"><input type="radio" name="q20" value="HAIL">RSA-HAIL</label>
+</div>
+</div>
 
 
-<p>
-<label>
-<span>Variability type:</span>
-<span class="check">
-<label><input type="radio" name="q3" value="fixed">fixed</label>
-<label><input type="radio" name="q3" value="variable" checked>variable</label>
-</span>
-</p>
+<div class="form-group">
+<label for="term" class="control-label col-sm-3">Contract term/length.(0~255):</label>
+<div class="col-sm-2">
+<input type="number" class="price" id="term" name="term" min="0" max="255" step="1" value="12"> hour(s)
+</div>
+</div>
+
+<div class="form-group">
+<label class="control-label col-sm-3">Shard encryption enforcement:</label>
+<div class="col-sm-2">
+<label class="checkbox-inline"><input type="radio" name="q1" value="yes" >Yes</label>
+<label class="checkbox-inline"><input type="radio" name="q1" value="No" checked>No</label>
+</div>
+</div>
+
+
+<div class="form-group">
+<label class="control-label col-sm-3">Variability type:</label>
+<div class="col-sm-2">
+<label class="checkbox-inline"><input type="radio" name="q3" value="fixed">Fixed</label>
+<label class="checkbox-inline"><input type="radio" name="q3" value="variable" checked>Variable</label>
+</div>
+</div>
 
 
 </form>
